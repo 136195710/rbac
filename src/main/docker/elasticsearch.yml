@@ -1,0 +1,10 @@
+version: '2'
+services:
+    rbac-elasticsearch:
+        container_name: rbac-elasticsearch
+        image: elasticsearch:2.4.1
+        # volumes:
+        #     - ~/volumes/jhipster/rbac/elasticsearch/:/usr/share/elasticsearch/data/
+        ports:
+            - 9200:9200
+            - 9300:9300
