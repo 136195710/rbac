@@ -3,7 +3,6 @@ package com.yamibuy.rbac.web.rest;
 import com.yamibuy.rbac.RbacApp;
 
 import com.yamibuy.rbac.domain.Address;
-import com.yamibuy.rbac.domain.Person;
 import com.yamibuy.rbac.repository.AddressRepository;
 import com.yamibuy.rbac.service.AddressService;
 import com.yamibuy.rbac.repository.search.AddressSearchRepository;
@@ -84,11 +83,6 @@ public class AddressResourceIntTest {
     public static Address createEntity(EntityManager em) {
         Address address = new Address()
                 .city(DEFAULT_CITY);
-        // Add required entity
-        Person person = PersonResourceIntTest.createEntity(em);
-        em.persist(person);
-        em.flush();
-        address.setPerson(person);
         return address;
     }
 

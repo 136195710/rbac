@@ -37,7 +37,6 @@
                 <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
                     <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="city"><span data-translate="rbacApp.address.city">City</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="person.id"><span data-translate="rbacApp.address.person">Person</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -45,9 +44,6 @@
                 <tr ng-repeat="address in vm.addresses track by address.id">
                     <td><a ui-sref="address-detail({id:address.id})">{{address.id}}</a></td>
                     <td>{{address.city}}</td>
-                    <td>
-                        <a ui-sref="person-detail({id:address.person.id})">{{address.person.id}}</a>
-                    </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

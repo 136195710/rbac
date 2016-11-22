@@ -1,0 +1,20 @@
+entity Menu {
+	name String required
+    icon String required
+    level Integer required
+	href String required
+	plat String
+}
+
+entity Operation {
+	operationName String required
+    operaDesc String
+}
+
+entity Role {
+	roleName String required
+}
+
+entity UserGroup {
+	groupName String required
+}

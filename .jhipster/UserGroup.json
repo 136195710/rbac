@@ -1,0 +1,27 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "roles",
+            "otherEntityName": "role",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "roleName",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "userGroup"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "groupName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20161122131013",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "user_group",
+    "pagination": "no"
+}

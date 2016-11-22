@@ -4,11 +4,10 @@
         {
             "relationshipName": "person",
             "otherEntityName": "person",
-            "relationshipType": "many-to-one",
-            "relationshipValidateRules": [
-                "required"
-            ],
-            "otherEntityField": "id"
+            "relationshipType": "many-to-many",
+            "otherEntityField": "name",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "address"
         }
     ],
     "fields": [

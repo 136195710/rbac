@@ -1,0 +1,22 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "operationName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "operaDesc",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161122131011",
+    "entityTableName": "operation",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

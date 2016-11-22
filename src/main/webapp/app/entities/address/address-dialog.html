@@ -28,15 +28,7 @@
 
         <div class="form-group">
             <label data-translate="rbacApp.address.person" for="field_person">Person</label>
-            <select class="form-control" id="field_person" name="person" ng-model="vm.address.person" ng-options="person as person.id for person in vm.people track by person.id" required>
-                <option value=""></option>
-            </select>
-        </div>
-        <div ng-show="editForm.person.$invalid">
-            <p class="help-block"
-                ng-show="editForm.person.$error.required" data-translate="entity.validation.required">
-                This field is required.
-            </p>
+            <select class="form-control" id="field_person" multiple name="person" ng-model="vm.address.people" ng-options="person as person.name for person in vm.people track by person.id"></select>
         </div>
     </div>
     <div class="modal-footer">

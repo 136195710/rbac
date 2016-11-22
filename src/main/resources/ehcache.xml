@@ -45,5 +45,33 @@
         timeToLiveSeconds="3600">
     </cache>
 
+    <cache name="com.yamibuy.rbac.domain.Address.people"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="com.yamibuy.rbac.domain.Menu"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="com.yamibuy.rbac.domain.Operation"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="com.yamibuy.rbac.domain.Role"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="com.yamibuy.rbac.domain.UserGroup"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="com.yamibuy.rbac.domain.Role.operations"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="com.yamibuy.rbac.domain.UserGroup.roles"
+        timeToLiveSeconds="3600">
+    </cache>
+
     <!-- jhipster-needle-ehcache-add-entry -->
 </ehcache>

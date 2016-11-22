@@ -10,7 +10,9 @@
         </dd>
         <dt><span data-translate="rbacApp.address.person">Person</span></dt>
         <dd>
-            <a ui-sref="person-detail({id:vm.address.person.id})">{{vm.address.person.id}}</a>
+            <span ng-repeat="person in vm.address.people">
+                <a ui-sref="person-detail({id: person.id})">{{person.name}}</a>{{$last ? '' : ', '}}
+            </span>
         </dd>
     </dl>
 

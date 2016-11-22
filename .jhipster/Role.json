@@ -1,0 +1,27 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "operations",
+            "otherEntityName": "operation",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "operationName",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "role"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "roleName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20161122131012",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "role",
+    "pagination": "no"
+}

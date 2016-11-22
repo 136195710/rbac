@@ -67,7 +67,7 @@ public class AddressService {
     @Transactional(readOnly = true) 
     public Address findOne(Long id) {
         log.debug("Request to get Address : {}", id);
-        Address address = addressRepository.findOne(id);
+        Address address = addressRepository.findOneWithEagerRelationships(id);
         return address;
     }
 

@@ -1,0 +1,110 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myMenuLabel" data-translate="rbacApp.menu.home.createOrEditLabel">Create or edit a Menu</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.menu.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.menu.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="rbacApp.menu.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.menu.name"
+                    required />
+            <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.name.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="rbacApp.menu.icon" for="field_icon">Icon</label>
+            <input type="text" class="form-control" name="icon" id="field_icon"
+                    ng-model="vm.menu.icon"
+                    required />
+            <div ng-show="editForm.icon.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.icon.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="rbacApp.menu.href" for="field_href">Href</label>
+            <input type="text" class="form-control" name="href" id="field_href"
+                    ng-model="vm.menu.href"
+                    required />
+            <div ng-show="editForm.href.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.href.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="rbacApp.menu.plat" for="field_plat">Plat</label>
+            <input type="text" class="form-control" name="plat" id="field_plat"
+                    ng-model="vm.menu.plat"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="rbacApp.menu.level" for="field_level">Level</label>
+            <input type="number" class="form-control" name="level" id="field_level"
+                    ng-model="vm.menu.level"
+                    required min="1" max="3" />
+            <div ng-show="editForm.level.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.level.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.level.$error.min" data-translate="entity.validation.min" translate-value-min="1">
+                    This field should be more than 1.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.level.$error.max" data-translate="entity.validation.max" translate-value-max="3">
+                    This field cannot be more than 3.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.level.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="rbacApp.menu.parentMenuId" for="field_parentMenuId">Parent Menu Id</label>
+            <input type="number" class="form-control" name="parentMenuId" id="field_parentMenuId"
+                    ng-model="vm.menu.parentMenuId"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="rbacApp.menu.operation" for="field_operation">Operation</label>
+            <select class="form-control" id="field_operation" name="operation" ng-model="vm.menu.operation" ng-options="operation as operation.operationName for operation in vm.operations track by operation.id" required>
+                <option value=""></option>
+            </select>
+        </div>
+        <div ng-show="editForm.operation.$invalid">
+            <p class="help-block"
+                ng-show="editForm.operation.$error.required" data-translate="entity.validation.required">
+                This field is required.
+            </p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

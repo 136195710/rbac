@@ -9,6 +9,10 @@
                 "main": "数据",
                 "person": "Person",
                 "address": "Address",
+                "menu": "Menu",
+                "operation": "Operation",
+                "role": "Role",
+                "userGroup": "User Group",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

@@ -25,12 +25,19 @@
                 <constraints nullable="false" />
             </column>
             
-            <column name="person_id" type="bigint">
-                <constraints nullable="false" />
-            </column>
-
             <!-- jhipster-needle-liquibase-add-column - Jhipster will add columns here, do not remove-->
         </createTable>
+        
+        <createTable tableName="address_person">
+            <column name="people_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="addresses_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="addresses_id, people_id" tableName="address_person"/>
         
     </changeSet>
 </databaseChangeLog>

@@ -1,0 +1,29 @@
+
+<div>
+    <h2><span data-translate="rbacApp.role.detail.title">Role</span> {{vm.role.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="rbacApp.role.roleName">Role Name</span></dt>
+        <dd>
+            <span>{{vm.role.roleName}}</span>
+        </dd>
+        <dt><span data-translate="rbacApp.role.operations">Operations</span></dt>
+        <dd>
+            <span ng-repeat="operations in vm.role.operations">
+                <a ui-sref="operation-detail({id: operations.id})">{{operations.operationName}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="role-detail.edit({id:vm.role.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>
